@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const delay = require('./helpers/delay');
 const db = require('./helpers/db');
 
+const multiply = require('bindings')('./../module/build/Release/addon.node')
+
 module.exports = (app) => {
     /**
      * Nothing much to do here. This endpoint acts more as a baseline.
@@ -90,5 +92,37 @@ module.exports = (app) => {
         const allMyStuff = await Promise.all([stuff, stuff1, stuff2, stuff3, stuff4]);
         res.json(allMyStuff); //*/
 
+    });
+
+    /**
+     * Database debugging
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/api/multiply
+     */
+    app.get('/api/multiply', async (req, res) => {
+        const num1 = Math.floor(Math.random() * 1000);
+        const num2 = Math.floor(Math.random() * 1000);
+
+        res.json({
+            num1,
+            num2,
+            multiplication: num1 * num2,
+        });
+    });
+
+    /**
+     * Database debugging
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/api/multiply/native
+     */
+    app.get('/api/multiply/native', async (req, res) => {
+        const num1 = Math.floor(Math.random() * 1000);
+        const num2 = Math.floor(Math.random() * 1000);
+
+        res.json({
+            num1,
+            num2,
+            multiplication: num1 * num2,
+        });
     });
 };

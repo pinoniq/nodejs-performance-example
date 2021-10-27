@@ -252,3 +252,4 @@ dist
 
 *.0x/
 .clinic/
+module/build/
