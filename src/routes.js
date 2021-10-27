@@ -1,5 +1,7 @@
 const bcrypt = require('bcrypt');
 
+const delay = require('./helpers/delay');
+
 module.exports = (app) => {
     /**
      * Nothing much to do here. This endpoint acts more as a baseline.
@@ -26,5 +28,27 @@ module.exports = (app) => {
             hash,
             'UV_THREADPOOL_SIZE': process.env.UV_THREADPOOL_SIZE,
         });
+    });
+
+    /**
+     * Pure async function using the event-loop
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/delay/async
+     */
+    app.get('/delay/async', async (req, res) => {
+        const result = await delay.async(500);
+
+        res.json(result);
+    });
+
+    /**
+     * Busy weight using the node process
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/delay/blocking
+     */
+    app.get('/delay/blocking', async (req, res) => {
+        const result = await delay.blocking(500);
+
+        res.json(result);
     });
 };
