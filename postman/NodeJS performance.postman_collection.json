@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "1b5c5ebe-7b74-48ee-b473-24ae6be38e14",
+		"name": "NodeJS performance",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bcrypt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/bcrypt",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"bcrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delay async",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/delay/async",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"delay",
+						"async"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delay blocking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/delay/blocking",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"delay",
+						"blocking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stuff api busy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/busy",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"busy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stuff api parallel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/parallel",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"parallel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
