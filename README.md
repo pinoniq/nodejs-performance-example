@@ -9,7 +9,7 @@ Most files will include comments with autocannon and/or 0x commands to run. Make
 * https://www.npmjs.com/package/0x
 
 And if you are to lazy to think, here is the copy/pasta:
-* `yarn add -g autocannon 0x`
+* `yarn global add autocannon 0x`
 
 Optionally you can install pm2 globally, but it is also installed locally in this project.
 
