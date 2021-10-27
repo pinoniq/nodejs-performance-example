@@ -110,6 +110,43 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Multiply internal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/parallel",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"parallel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Multiply addon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/api/multiply/native",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"multiply",
+						"native"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
