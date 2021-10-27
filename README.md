@@ -29,6 +29,10 @@ A bunch of scripts to launch our app.
 * `yarn run app:restart:pm2`
 * `yarn run app:stop:pm2`
 
+## Building the native addon
+* `cd module`
+* `node-gyp configure build`
+
 ## Debugging with Clinic.js
 
 ### installation
