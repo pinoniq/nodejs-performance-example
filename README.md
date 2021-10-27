@@ -22,9 +22,9 @@ Optionally you can install pm2 globally, but it is also installed locally in thi
 A bunch of scripts to launch our app.
 
 #### Native nodejs
-`yarn run app:start:native`
+* `yarn run app:start:native`
 
 #### Managed by pm2
-`yarn run app:start:pm2`
-`yarn run app:restart:pm2`
-`yarn run app:stop:pm2`
+* `yarn run app:start:pm2`
+* `yarn run app:restart:pm2`
+* `yarn run app:stop:pm2`
