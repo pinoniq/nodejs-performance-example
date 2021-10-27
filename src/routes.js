@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const delay = require('./helpers/delay');
 const db = require('./helpers/db');
 
-const multiply = require('bindings')('./../module/build/Release/addon.node')
+const multiply = require('bindings')('./../module/build/Release/addon.node');
 
 module.exports = (app) => {
     /**
