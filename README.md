@@ -28,3 +28,11 @@ A bunch of scripts to launch our app.
 * `yarn run app:start:pm2`
 * `yarn run app:restart:pm2`
 * `yarn run app:stop:pm2`
+
+## Debugging with Clinic.js
+
+### installation
+* `yarn global add clinic`
+
+### Running
+* `clinic doctor -- node index.js`

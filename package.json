@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "clinic": "^9.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "global": "^4.4.0",
     "pm2": "^5.1.2"
   }
 }
