@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 
 const delay = require('./helpers/delay');
+const db = require('./helpers/db');
 
 module.exports = (app) => {
     /**
@@ -50,5 +51,44 @@ module.exports = (app) => {
         const result = await delay.blocking(500);
 
         res.json(result);
+    });
+
+    /**
+     * Database debugging
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/api/busy
+     * $ 0x -P 'autocannon -c 50 -d 10 http://localhost:$PORT/api/busy' index.js
+     */
+    app.get('/api/busy', async (req, res) => {
+        const stuff = await db.findStuff();
+
+        res.json(stuff);
+    });
+
+    /**
+     * Parallel database debugging
+     *
+     * $ autocannon -c 50 -d 10 http://localhost:6000/api/parallel
+     * $ 0x -P 'autocannon -c 50 -d 10 http://localhost:$PORT/api/parallel' index.js
+     */
+    app.get('/api/parallel', async (req, res) => {
+        const stuff = await db.findStuffFaster();
+        const stuff1 = await db.findStuffFaster();
+        const stuff2 = await db.findStuffFaster();
+        const stuff3 = await db.findStuffFaster();
+        const stuff4 = await db.findStuffFaster();
+
+        res.json([stuff, stuff1, stuff2, stuff3, stuff4]); //*/
+
+        /*
+        const stuff = db.findStuffFaster();
+        const stuff1 = db.findStuffFaster();
+        const stuff2 = db.findStuffFaster();
+        const stuff3 = db.findStuffFaster();
+        const stuff4 = db.findStuffFaster();
+
+        const allMyStuff = await Promise.all([stuff, stuff1, stuff2, stuff3, stuff4]);
+        res.json(allMyStuff); //*/
+
     });
 };
