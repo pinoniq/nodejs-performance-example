@@ -1,0 +1,15 @@
+{
+  "name": "@pinoniq/nodejs-performance-example",
+  "description": "A small nodejs app to dive into basic nodejs performance",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jeroen Meeus <meneer.meeus@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "app:start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
